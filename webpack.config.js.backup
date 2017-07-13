@@ -1,0 +1,16 @@
+const config = {
+  entry: ['babel-polyfill', `${__dirname}/src/build/router.jsx`],
+  output: {
+    path: `${__dirname}/src/publics`,
+    filename: 'bundle.js',
+  },
+  module: {
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loaders: ['babel-loader'],
+    }],
+  },
+};
+
+module.exports = config;
