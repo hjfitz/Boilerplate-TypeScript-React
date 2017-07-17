@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
-    "dev": "nodemon index",
-    "build": "webpack",
-    "dev-watch": "webpack -w"
+    "dev": "./node_modules/nodemon/bin/nodemon.js index",
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "build-dev": "./node_modules/webpack/bin/webpack.js -w"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPL-2.0",
   "dependencies": {
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.1",

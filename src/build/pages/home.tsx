@@ -17,31 +17,36 @@ export class Home extends React.Component<HomeProps, undefined> {
   render() {
     return (
       <div>
-      <Nav brandImg='pub/img/logo.png' />
+      <Nav />
       <div className="container">
         <div className="page-header">
-          <h1>Cirrus Web Accelerator</h1>
           <h2 className="grey-text darken-2">React <span className="red-text">❤</span> TypeScript</h2>
         </div>
-        <p>This is the react flavour of the Cirrus Web Accelerator.</p>
 
         <Alert>
-          <b>Note: </b>This accelerator is powered by react-router-dom, a powerful, quick routing system for React. It also utilises TypeScript with React!
-          It is <b>strongly</b> recommended that you read their <a href="https://github.com/ReactTraining/react-router#readme">documentation</a>
+          <p>This accelerator is powered by both React</p>
+          <p>It's also powered by TypeScript. It's recommended you know what you're doing before working with this.</p>
+          <p>Documentation:</p>
+          <ul>
+            <li><a href='https://facebook.github.io/react/'>React</a></li>
+            <li><a href='https://reacttraining.com/react-router/'>React Router DOM</a></li>
+            <li><a href='https://www.typescriptlang.org/'>TypeScript</a></li>
+            <li><a href='https://www.typescriptlang.org/docs/handbook/react-&-webpack.html'>TypeScript x React x WebPack</a></li>
+          </ul>
         </Alert>
 
         <div className="page-header">
           <h3>Getting started.</h3>
         </div>
-        <p>
-          To use this flavour of the web accelerator,
-          create your react pages under: <code>src/components/pages</code>
-          and import them into: <code>src/build/router.jsx</code>
-        </p>
+        <Card>
+          <p>Create your react pages under: <code>src/build/pages</code> and import them into: <code>src/build/router.jsx</code></p>
+          <p>Ensure to create the interface for each component! Check <code>src/build/components/card.tsx</code> for a good example</p>
+          <p>Create any extra components (Custom HTML elements) under <code>src/build/components</code> and import them in to your custom pages</p>
+        </Card>
 
         <Alert>
           <b>Warning: </b>
-          This example - and its components - uses bootstrap,
+          This example - and its components - uses some Bootstrap, but mostly Materialize,
           to change or extend this, modify/add your dependencies in
           <code>src/public/index.html</code>
         </Alert>
