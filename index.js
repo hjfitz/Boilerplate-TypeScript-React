@@ -1,6 +1,7 @@
 const express = require('express');
 const chalk = require('chalk');
 const util = require('./util');
+const path = require('path');
 
 const app = express();
 
@@ -20,12 +21,12 @@ app.use('/', (req, res, next) => {
 });
 
 // keep all of the resources on /pub
-app.use('/pub', express.static(pub, {
-  extensions: ['css', 'js', 'png', 'jpg'],
-}));
+app.use('/pub', express.static(pub));
 
 // but stick the html pages under the root.
-app.use('/', express.static(pub, { extensions: ['html'] }));
+app.use('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/build/public/index.html'));
+});
 
 console.log(chalk.yellow(`Attempting to listen on ...${serverLocation}`));
 
